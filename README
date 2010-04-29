@@ -11,6 +11,8 @@ press h to send grid in the back
 press k to toggle grid lines
 press i for inverse colors
 
+doubleclick in a grid square for informations
+
 the basic grid is a 24px squared 960px wide grid with some helper lines and a grouping by four
 
 you can change the parameters by changing the following values in a <script> block like this

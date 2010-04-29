@@ -1,6 +1,15 @@
-// scGrid builds a grid for webdesign issues jquery 1.4 is required
+/**
+ * scGrid builds a grid for webdesign issues jquery 1.4 is required
+ * 
+ * @author Christian Koch
+ * 
+ */
 
-// document ready
+/**
+ * document ready
+ * 
+ * bind some keys
+ */
 $(function(){
 	// build grid
 	scGrid.buildGrid();
@@ -30,12 +39,20 @@ $(function(){
 	
 }); // end of document ready
 
-// some constants
+/**
+ * some constants
+ */
 const SC_GRID_BEHIND = true;
 const SC_GRID_INFRONT = false;
 const SC_GRID_STAY = 'STAY';
 
-// the scGrid class definition
+/**
+ * scGrid
+ * 
+ * generates a table based grid overlay and helper lines
+ * 
+ * @author Christian Koch
+ */
 var scGrid = {
 	gridWidth: 960,											// width of the grid in total
 	gridHeight: 768,                            			// height of the grid
@@ -79,8 +96,14 @@ var scGrid = {
 	showGridLevel: 3,										// helper 0 = not, 1 = grid, 2 = group, 3 = both
 	showInverse: false,										// helper true|false for inverting colors
 	
-	// build the helper lines
-	// vertical and horizontal
+	/**
+	 * build lines
+	 * 
+	 * build the helper lines defined in horizontalLines and verticalLines
+	 * as a div block. 
+	 * 
+	 * @author Christian Koch
+	 */
 	buildLines: function () {
 		for (i = 0; i < scGrid.horizontalLines.length; i++) {
 			$('#sc_grid').append('<div style="position:absolute; top: ' + scGrid.horizontalLines[i] + 'px; left: 0px; min-width: ' + scGrid.gridWidth + 'px; width: ' + scGrid.gridWidth + 'px;" class="hl"></div>');
@@ -90,12 +113,17 @@ var scGrid = {
 		}
 	},
 	
-	// builds the table at the end of scGrid.hook
-	// numbers rows and cols
-	// sets even (e) and odd (o) classes
-	// sets first (f) and last (l) classes
-	// defines the class for group (g)
-	// example .. class="c e l g" ..
+	/**
+	 * build grid
+	 *  
+	 * builds the table at the end of scGrid.hook
+	 *
+	 * numbers rows and cols as id
+	 * sets even (e) and odd (o) classes
+	 * sets first (f) and last (l) classes
+	 * defines the class for group (g)
+	 * example .. class="c e l g" ..
+	 */
 	buildGrid: function () {
 		// the hook for the grid table
 		$('#sc_grid').remove();
@@ -131,7 +159,7 @@ var scGrid = {
 		$('head').append('<style id="sc_grid_style"></style>');
 		var style = $('#sc_grid_style');
 		// define all css that is needed
-		style.append('#sc_grid_mbox { position:absolute; background-color:rgba(255,255,255,1); color: #000; opacity:0.9; padding:4px; font-size:10px; font-family:sans-serif; width:96px; height:72px;}');
+		style.append('#sc_grid_mbox { position:absolute; background-color:rgba(255,255,255,1); color: #000; opacity:0.9; padding:4px; font-size:10px; font-family:sans-serif; width:96px; height:96px;}');
 		style.append('#sc_grid, #sc_grid table, #sc_grid tr, #sc_grid td, #sc_grid div.hl, #sc_grid div.vl { margin:0px; padding:0px; border-collapse:collapse; }');
 		style.append('#sc_grid .hl { border-top:' + scGrid.horizontalBorderSize + 'px ' + scGrid.horizontalBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.horizontalBorderInverseColor : scGrid.horizontalBorderColor) + '; }');
 		style.append('#sc_grid .vl { border-left:' + scGrid.verticalBorderSize + 'px ' + scGrid.verticalBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.verticalBorderInverseColor : scGrid.verticalBorderColor) + '; }');
