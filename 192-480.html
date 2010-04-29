@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>scGrid example</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="grid.js"></script>
+		<script type="text/javascript">
+			// doc ready
+			$(function(){
+				// define your hook
+				scGrid.hook = '#page';
+				scGrid.gridWidth = 984;
+				scGrid.verticalLines = [192,192+504,192+504+144];
+				// build the grid once
+				scGrid.buildGrid();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<h1>MySite</h1>
+				<p>I'm a subtitle</p>
+			</div>
+			<div id="topnav">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Aktuelles</a></li>
+					<li><a href="">Presse</a></li>
+					<li><a href="">Themen</a></li>
+					<li><a href="">Newsletter</a></li>
+				</ul>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a href="">Standortpolitik &amp; Unternehmensf&ouml;rderung</a></li>
+					<li><a href="">Innovation &amp; Umwelt</a></li>
+					<li><a href="">Recht &amp; Fairplay</a></li>
+					<li><a href="">Item 4</a></li>
+					<li><a href="">Item 5</a></li>
+				</ul>
+			</div>
+			<div id="content">
+		
+		<h1>Welcome to scGrid</h1>
+		<h2>This is a great tool!</h2>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+			</div>
+			
+			<div id="related">
+				<div class="box">
+					<h4>Usage of scGrid</h4>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+					</p>
+					<h4>Another test</h4>
+					<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+					</p>
+				</div>
+				<div class="small box">
+					<h4>Usage of scGrid</h4>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed  eos et accusam et justo
+					</p>
+				</div>
+				<div class="small box">
+					<h4>Usage of scGrid</h4>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed  eos et accusam et justo
+					</p>
+				</div>
+			</div>
+			<div id="footer">
+				<p>Scandio GmbH &copy; 2010</p>
+			</div>
+		</div>
+	</body>
+</html>
+
+

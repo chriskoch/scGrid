@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>scGrid example</title>
+		<style type="text/css">
+		/* document style */
+			* {
+				margin:0px;
+				padding:0px;
+			}
+
+			#page {
+				width:960px;
+				margin-left:auto;
+				margin-right:auto;
+			}
+
+			#header {
+			}
+			
+			#header h1 {
+				font-family:sans-serif;
+				font-weight:normal;
+				font-size:72px;
+				background-color:#333399;
+				color:#fff;
+				padding-left:8px;
+				padding-top:8px;
+				height:88px;
+			}
+			#header p {
+				padding-left:8px;
+				font-family:sans-serif;
+				font-weight:bold;
+				font-size:14px;
+				background-color:#111133;
+				color:#fff;
+				height:42px;
+				border-bottom: 6px solid #333399;
+			}
+			#menu {
+				width: 186px;
+				float: left;
+				border-right:6px solid #333399;
+				min-height:600px;
+			}
+			#menu ul {
+				list-style-position:inside;
+				list-style-type:none;
+			}
+			#content {
+				padding:8px;
+				width:512px;
+				float: left;
+			}
+			#related {
+				padding:8px;
+				width:224px;
+				float: right;
+			}
+			#footer {
+				clear:both;
+				width:960px;
+			}
+			#footer p {
+				padding:6px;
+				background-color:#333399;
+				padding-left:8px;
+				font-size:10px;
+				color:#fff;
+			}
+		</style>	
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="grid.js"></script>
+		<script type="text/javascript">
+			// doc ready
+			$(function(){
+				// define your hook
+				scGrid.hook = '#page';
+				// build the grid once
+				scGrid.buildGrid();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<h1>MySite</h1>
+				<p>I'm a subtitle</p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a href="">Item 1</a></li>
+					<li><a href="">Item 2</a></li>
+					<li><a href="">Item 3</a></li>
+					<li><a href="">Item 4</a></li>
+					<li><a href="">Item 5</a></li>
+				</ul>
+			</div>
+			<div id="content">
+		
+		<h1>Welcome to scGrid</h1>
+		<h2>This is a great tool!</h2>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+			</div>
+			
+			<div id="related">
+				<div class="box">
+					<h4>Usage of scGrid</h4>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+					</p>
+				</div>
+			</div>
+			<div id="footer">
+				<p>Scandio GmbH &copy; 2010</p>
+			</div>
+		</div>
+	</body>
+</html>
+
+
