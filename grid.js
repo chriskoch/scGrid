@@ -65,8 +65,8 @@ var scGrid = {
 	verticalPosition: 99,                       			// in front switches zu -99 if it's send to back
 	borderSize: 1,                              			// border thickness
 	borderStyle: 'dotted',                      			// border style
-	borderColor: '#777',                        			// border color
-	borderInverseColor: '#888',								// inverse border color
+	borderColor: '#333',                        			// border color
+	borderInverseColor: '#BBB',								// inverse border color
 	groupBorderSize: 1,                         			// border thickness of the group
 	groupBorderStyle: 'dashed',                 			// group border style
 	groupBorderColor: '#444',                   			// group border color
@@ -86,10 +86,6 @@ var scGrid = {
 	verticalBorderStyle: 'solid',               			// vertical border style
 	verticalBorderColor: 'rgba(255,255,0,0.75)',			// vertical border color
 	verticalBorderInverseColor: 'rgba(0,0,255,0.75)',		// inverse vertical border color
-	lineBorderSize: 2,										// line border size
-	lineBorderStyle: 'solid',								// line border style
-	lineBorderColor: 'green',								// line border color
-	lineBorderInverseColor: '#333399',						// inverse line border color
 	isVisible: false,										// helper true or false
 	showEven: false,										// helper true or false
 	showHelper: 3,											// helper 0 = not, 1 = vert only, 2 = horiz only, 3 = both
@@ -101,8 +97,6 @@ var scGrid = {
 	 * 
 	 * build the helper lines defined in horizontalLines and verticalLines
 	 * as a div block. 
-	 * 
-	 * @author Christian Koch
 	 */
 	buildLines: function () {
 		for (i = 0; i < scGrid.horizontalLines.length; i++) {
@@ -150,8 +144,12 @@ var scGrid = {
 		$('#sc_grid').hide();
 	}, // end of buildGrid()
 	
-	// puts a news style tag in the page head
-	// defines all needed styles for the grid
+	/**
+	 * set grid style
+	 *
+	 * puts a new style tag in the page head
+	 * defines all needed styles for the grid
+	 */
 	setGridStyle: function () {
 		// remove if exists
 		$('#sc_grid_style').remove();
@@ -165,11 +163,11 @@ var scGrid = {
 		style.append('#sc_grid .vl { border-left:' + scGrid.verticalBorderSize + 'px ' + scGrid.verticalBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.verticalBorderInverseColor : scGrid.verticalBorderColor) + '; }');
 		style.append('#sc_grid { ' + ((scGrid.alignment == 'center') ? 'width:' + scGrid.gridWidth + 'px; margin-left:auto; margin-right:auto;' : 'left:0px;') + ' z-index:' + scGrid.verticalPosition + '; position:absolute; top:0px; opacity: ' + scGrid.opacity + '; background-color: ' + scGrid.background + '; }');
 		style.append('#sc_grid tr { min-height: ' + scGrid.elemHeight + 'px; max-height: ' + scGrid.elemHeight + 'px; height: ' + scGrid.elemHeight + 'px; }');
-		style.append('#sc_grid td { border-right: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.borderColor + '; border-bottom: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.borderColor + '; width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; min-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; max-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; }');
-		style.append('#sc_grid td.g { border-right: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + scGrid.groupBorderColor + '; width: ' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; }');
-		style.append('#sc_grid tr.g td { border-bottom: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + scGrid.groupBorderColor + '; height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  min-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  max-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px; }');
+		style.append('#sc_grid td { border-right: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + ((scGrid.showInverse) ? scGrid.borderInverseColor : scGrid.borderColor) + '; border-bottom: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + ((scGrid.showInverse) ? scGrid.borderInverseColor : scGrid.borderColor) + '; width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; min-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; max-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; }');
+		style.append('#sc_grid td.g { border-right: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.groupBorderInverseColor : scGrid.groupBorderColor) + '; width: ' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; }');
+		style.append('#sc_grid tr.g td { border-bottom: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.groupBorderInverseColor : scGrid.groupBorderColor) + '; height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  min-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  max-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px; }');
 		if(scGrid.showEven) {
-			style.append('#sc_grid tr.o td.e, #sc_grid tr.e td { background-color:' + scGrid.evenBackground + '; }');
+			style.append('#sc_grid tr.o td.e, #sc_grid tr.e td { background-color:' + ((scGrid.showInverse) ? scGrid.evenBackgroundInverse : scGrid.evenBackground) + '; }');
 		}
 		if(scGrid.showHelper == 0) {
 			style.append('#sc_grid .hl, #sc_grid .vl { display:none }');
@@ -180,13 +178,13 @@ var scGrid = {
 		}
 		if (scGrid.showGridLevel == 1) {
 			// raster on, group off
-			style.append('#sc_grid td.g { border-right: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.borderColor + '; width: ' + (scGrid.elemWidth - scGrid.borderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; }');
-			style.append('#sc_grid tr.g td { border-bottom: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.borderColor + '; height: ' + (scGrid.elemHeight - scGrid.borderSize) + 'px;  min-height: ' + (scGrid.elemHeight - scGrid.borderSize) + 'px;  max-height: ' + (scGrid.elemHeight - scGrid.borderSize) + 'px; }');
+			style.append('#sc_grid td.g { border-right: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + ((scGrid.showInverse) ? scGrid.borderInverseColor : scGrid.borderColor) + '; width: ' + (scGrid.elemWidth - scGrid.borderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; }');
+			style.append('#sc_grid tr.g td { border-bottom: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + ((scGrid.showInverse) ? scGrid.borderInverseColor : scGrid.borderColor) + '; height: ' + (scGrid.elemHeight - scGrid.borderSize) + 'px;  min-height: ' + (scGrid.elemHeight - scGrid.borderSize) + 'px;  max-height: ' + (scGrid.elemHeight - scGrid.borderSize) + 'px; }');
 		} else if (scGrid.showGridLevel == 2) {
 			// group on raster off
 			style.append('#sc_grid td { border-right: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.background + '; border-bottom: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.background + '; width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; min-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; max-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; }');
-			style.append('#sc_grid td.g { border-right: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + scGrid.groupBorderColor + '; width: ' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; }');
-			style.append('#sc_grid tr.g td { border-bottom: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + scGrid.groupBorderColor + '; height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  min-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  max-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px; }');
+			style.append('#sc_grid td.g { border-right: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.groupBorderInverseColor : scGrid.groupBorderColor) + '; width: ' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.groupBorderSize) + 'px; }');
+			style.append('#sc_grid tr.g td { border-bottom: ' + scGrid.groupBorderSize + 'px ' + scGrid.groupBorderStyle + ' ' + ((scGrid.showInverse) ? scGrid.groupBorderInverseColor : scGrid.groupBorderColor) + '; height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  min-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px;  max-height: ' + (scGrid.elemHeight - scGrid.groupBorderSize) + 'px; }');
 		} else if (scGrid.showGridLevel == 0) {
 			// all off
 			style.append('#sc_grid td { border-right: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.background + '; border-bottom: ' + scGrid.borderSize + 'px ' + scGrid.borderStyle + ' ' + scGrid.background + '; width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; min-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; max-width:' + (scGrid.elemWidth - scGrid.borderSize) + 'px; height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; min-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; max-height:' + (scGrid.elemHeight - scGrid.borderSize) + 'px; }');
