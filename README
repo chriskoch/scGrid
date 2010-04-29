@@ -16,50 +16,50 @@ the basic grid is a 24px squared 960px wide grid with some helper lines and a gr
 you can change the parameters by changing the following values in a <script> block like this
 
 <script type="text/javascript">
-	// doc ready
-	$(function(){
-		// define your hook
-		scGrid.hook = '#page';
-		// build the grid once
-		scGrid.buildGrid();
-	});
+    // doc ready
+    $(function(){
+        // define your hook this is important if your web page is centered
+        scGrid.hook = '#page';
+        // build the grid
+        scGrid.buildGrid();
+    });
 </script>
 
 possible parameters with defaults
 
-scGrid.gridWidth: 960,											// width of the grid in total
-scGrid.gridHeight: 768,	                            			// height of the grid
-scGrid.hook: 'body',    	                           			// the jquery selector where the grid shoul be anchored
-scGrid.alignment: 'center', 	                       			// left is another option
-scGrid.elemWidth: 24,           	                   			// width of a grid element
-scGrid.elemHeight: 24,              	               			// height of a grid element
-scGrid.groupElemHorizontal: 4,          	           			// horizontal group size in number of elements
-scGrid.groupElemVertical: 4,                	       			// vertical group size in number of elements
-scGrid.verticalPosition: 99,                    	   			// in front switches zu -99 if it's send to back
-scGrid.borderSize: 1,                              				// border thickness
-scGrid.borderStyle: 'dotted',                      				// border style
-scGrid.borderColor: '#777',	                        			// border color
-scGrid.borderInverseColor: '#888',								// inverse border color
-scGrid.groupBorderSize: 1,          	               			// border thickness of the group
-scGrid.groupBorderStyle: 'dashed',      	           			// group border style
-scGrid.groupBorderColor: '#444',            	       			// group border color
-scGrid.groupBorderInverseColor: '#aaa',							// inverse group border color
-scGrid.opacity: 1,                                 				// opacity of the whole grid
-scGrid.background: 'rgba(255,255,255,0)',          				// normal background (odd)
-scGrid.backgroundInverse: 'rgba(128,128,128,0.5)',				// inverse normal background (odd)
-scGrid.evenBackground: 'rgba(166,166,166,0.2)',	    			// background on even rows/cols leave empty if not
-scGrid.evenBackgroundInverse: 'rgba(88,88,88,0.2)',				// inverse background on even rows/cols leave empty if not
-scGrid.horizontalLines: [ 144, 744],							// array of horizontal lines
-scGrid.horizontalBorderSize: 1,									// border size of the horizontal helper line
-scGrid.horizontalBorderStyle: 'solid',             				// horizontal border style
-scGrid.horizontalBorderColor: 'rgba(128,255,0,0.75)',			// horizontal border color
-scGrid.horizontalBorderInverseColor: 'rgba(128,0,255,0.75)',	// inverse horizontal border color
-scGrid.verticalLines: [ 192, 456, 720 ],						// array of vertical lines
-scGrid.verticalBorderSize: 1,					    			// border size of the vertical helper line
-scGrid.verticalBorderStyle: 'solid',               				// vertical border style
-scGrid.verticalBorderColor: 'rgba(255,255,0,0.75)',				// vertical border color
-scGrid.verticalBorderInverseColor: 'rgba(0,0,255,0.75)',		// inverse vertical border color
-scGrid.lineBorderSize: 2,										// line border size
-scGrid.lineBorderStyle: 'solid',								// line border style
-scGrid.lineBorderColor: 'green',								// line border color
-scGrid.lineBorderInverseColor: '#333399',						// inverse line border color
+scGrid.gridWidth: 960,                                             // width of the grid in total
+scGrid.gridHeight: 768,                                            // height of the grid
+scGrid.hook: 'body',                                               // the jquery selector where the grid shoul be anchored
+scGrid.alignment: 'center',                                        // left is another option
+scGrid.elemWidth: 24,                                              // width of a grid element
+scGrid.elemHeight: 24,                                             // height of a grid element
+scGrid.groupElemHorizontal: 4,                                     // horizontal group size in number of elements
+scGrid.groupElemVertical: 4,                                       // vertical group size in number of elements
+scGrid.verticalPosition: 99,                                       // in front switches zu -99 if it's send to back
+scGrid.borderSize: 1,                                              // border thickness
+scGrid.borderStyle: 'dotted',                                      // border style
+scGrid.borderColor: '#777',                                        // border color
+scGrid.borderInverseColor: '#888',                                 // inverse border color
+scGrid.groupBorderSize: 1,                                         // border thickness of the group
+scGrid.groupBorderStyle: 'dashed',                                 // group border style
+scGrid.groupBorderColor: '#444',                                   // group border color
+scGrid.groupBorderInverseColor: '#aaa',                            // inverse group border color
+scGrid.opacity: 1,                                                 // opacity of the whole grid
+scGrid.background: 'rgba(255,255,255,0)',                          // normal background (odd)
+scGrid.backgroundInverse: 'rgba(128,128,128,0.5)',                 // inverse normal background (odd)
+scGrid.evenBackground: 'rgba(166,166,166,0.2)',                    // background on even rows/cols leave empty if not
+scGrid.evenBackgroundInverse: 'rgba(88,88,88,0.2)',                // inverse background on even rows/cols leave empty if not
+scGrid.horizontalLines: [ 144, 744],                               // array of horizontal lines
+scGrid.horizontalBorderSize: 1,                                    // border size of the horizontal helper line
+scGrid.horizontalBorderStyle: 'solid',                             // horizontal border style
+scGrid.horizontalBorderColor: 'rgba(128,255,0,0.75)',              // horizontal border color
+scGrid.horizontalBorderInverseColor: 'rgba(128,0,255,0.75)',       // inverse horizontal border color
+scGrid.verticalLines: [ 192, 456, 720 ],                           // array of vertical lines
+scGrid.verticalBorderSize: 1,                                      // border size of the vertical helper line
+scGrid.verticalBorderStyle: 'solid',                               // vertical border style
+scGrid.verticalBorderColor: 'rgba(255,255,0,0.75)',                // vertical border color
+scGrid.verticalBorderInverseColor: 'rgba(0,0,255,0.75)',           // inverse vertical border color
+scGrid.lineBorderSize: 2,                                          // line border size
+scGrid.lineBorderStyle: 'solid',                                   // line border style
+scGrid.lineBorderColor: 'green',                                   // line border color
+scGrid.lineBorderInverseColor: '#333399',                          // inverse line border color
