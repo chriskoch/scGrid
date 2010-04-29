@@ -4,16 +4,18 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>scGrid example</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="grid.js"></script>
+		<script type="text/javascript" src="../jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="../grid.js"></script>
 		<script type="text/javascript">
 			// doc ready
 			$(function(){
-				// define your hook
+				// define your hook for centering page
 				scGrid.hook = '#page';
+				// redefine the grid width
 				scGrid.gridWidth = 984;
+				// build special helper lines
 				scGrid.verticalLines = [192,192+504,192+504+144];
-				// build the grid once
+				// build the grid
 				scGrid.buildGrid();
 			});
 		</script>
@@ -27,17 +29,17 @@
 			<div id="topnav">
 				<ul>
 					<li><a href="">Home</a></li>
-					<li><a href="">Aktuelles</a></li>
-					<li><a href="">Presse</a></li>
-					<li><a href="">Themen</a></li>
+					<li><a href="">News</a></li>
+					<li><a href="">Press</a></li>
+					<li><a href="">Themes</a></li>
 					<li><a href="">Newsletter</a></li>
 				</ul>
 			</div>
 			<div id="menu">
 				<ul>
-					<li><a href="">Standortpolitik &amp; Unternehmensf&ouml;rderung</a></li>
-					<li><a href="">Innovation &amp; Umwelt</a></li>
-					<li><a href="">Recht &amp; Fairplay</a></li>
+					<li><a href="">Item 1</a></li>
+					<li><a href="">Item 2</a></li>
+					<li><a href="">Item 3</a></li>
 					<li><a href="">Item 4</a></li>
 					<li><a href="">Item 5</a></li>
 				</ul>
