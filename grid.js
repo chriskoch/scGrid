@@ -47,7 +47,7 @@ const SC_GRID_INFRONT = false;
 const SC_GRID_STAY = 'STAY';
 
 /**
- * scGrid
+ * scGrid 
  * 
  * generates a table based grid overlay and helper lines
  * 
